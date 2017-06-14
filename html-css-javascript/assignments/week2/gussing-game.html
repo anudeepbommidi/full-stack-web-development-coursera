@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+    <title>Guessing Game</title>
+    <script>
+    
+      var num = Math.floor(Math.random() * 100)+1;
+      window.onload = (function(){
+          
+            var guess = NaN;
+            var numGuesses=0;
+            while(guess!=num){
+                guess = prompt("Guess a number between 0 and 100");
+                numGuesses++;
+                if(guess <1 || guess>100){
+                    alert("Wrong Range!");
+                }
+                else if(isNaN(guess)){
+                    alert("Please enter a valid number!");
+                }
+                else if(guess> num){
+                    alert("You guessed too large!");
+                }
+                else if(guess < num){
+                    alert("You guessed too small!");
+                }               
+            }
+            alert("Well Done! You took "+numGuesses+" guesses!");
+            
+      })();
+    
+    </script>
+</head>
+<body>
+</body>
+</html>

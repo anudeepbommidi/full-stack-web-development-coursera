@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+    <title>Title</title>    
+</head>
+<body>
+    <p>paragraph</p><br>
+    <div>
+        Division1
+        <div>
+        Division2
+        </div>
+        <ol>
+        <li>list1</li>
+        <li>list2</li>
+        </ol>    
+    </div>
+</body>  
+    
+    <script>
+        
+     (function(){
+         
+         attachHandler(document);
+         
+         function attachHandler(node){
+             if(node==null) return;
+             node.onclick = handleClick;
+             
+             for(var n of node.childNodes)
+                 attachHandler(n);
+         }
+         
+         function handleClick(event){
+             
+             event.stopPropagation();  //to prevent event from triggering multiple propagations 
+             
+             var node = event.target;
+             var thisPath = node.nodeName;
+             
+             while(node.parentNode){
+                 var parent = node.parentNode;
+                 thisPath = parent.nodeName +" > "+thisPath;
+                 node=parent;
+             }
+             alert(thisPath);
+         }
+         
+         
+     })();  
+    
+    </script>
+</html>

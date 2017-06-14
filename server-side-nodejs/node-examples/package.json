@@ -1,0 +1,14 @@
+{
+  "name": "node-callback-practice",
+  "version": "1.0.0",
+  "description": "using a rectangle function to practice the working of callbacks in nodejs",
+  "main": "rectangle-2.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Anudeep Bommidi",
+  "license": "MIT",
+  "dependencies": {
+    "yargs": "^8.0.1"
+  }
+}

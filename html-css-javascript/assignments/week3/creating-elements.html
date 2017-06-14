@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+    <title>Title</title>    
+
+<script>
+
+    function insert_new_element(){
+        
+        var newItem = document.createElement("hr");  //creates horizontal line
+        
+        var parent = document.getElementsByTagName("body")[0];
+        parent.insertBefore(newItem, parent.firstChild);
+    } 
+    
+    /* dynamically add text */
+    
+    function add_text(){
+        result=document.createTextNode("This is dynamically added text!");
+        
+        document.getElementById("my_text").appendChild(result);
+    }
+    
+</script>    
+</head>
+    
+<body onclick = "insert_new_element()">
+<h1 onclick = "add_text()" id="my_text">Please click here</h1>
+</body>
+</html>
